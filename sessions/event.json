@@ -1,0 +1,15 @@
+{
+    "Records": [
+      {
+        "s3": {
+          "bucket": {
+            "name": "sesreceiptwils"
+          },
+          "object": {
+            "key": "processed-email/test-email.eml"
+          }
+        }
+      }
+    ]
+  }
+  

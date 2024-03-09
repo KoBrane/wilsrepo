@@ -1,0 +1,21 @@
+# template.yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: SAM template for testing Lambda handler
+
+Resources:
+  TestLambdaFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Environment:
+        Variables:
+          BUCKET_NAME: YourBucketName
+          PROCESSED_EMAILS_FOLDER: ProcessedEmails
+          MAIN_EMAILS_FOLDER: MainEmails
+      Policies:
+        - S3ReadPolicy:
+            BucketName: YourBucketName  # Add your S3 bucket name here
+
